@@ -1,0 +1,10 @@
+#dialogBox:before{
+    content:"";
+    position:absolute;
+    left:-10px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent; 
+    
+    border-right:20px solid rgb(229 231 235 ); 
+  
+}

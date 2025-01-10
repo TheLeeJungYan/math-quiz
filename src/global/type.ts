@@ -5,5 +5,26 @@ export interface ChildrenProps {
 }
 
 export interface ProgressBarProps {
-  percentage: number;
+  currentIndex: number;
+  maxNumber:number
+}
+
+export interface OptionProps {
+  a: number;
+  b: number;
+  c: number;
+}
+
+export interface QuestionProps {
+  id: number;
+  question: number; 
+  options: OptionProps;  
+  answer: number;  
+}
+
+export interface OptionComponentProps {
+  key:string;
+  value:number;
+  index:number;
+  currentQuestionIndex:number;
 }
