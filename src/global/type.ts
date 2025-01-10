@@ -23,7 +23,7 @@ export interface QuestionProps {
 }
 
 export interface OptionComponentProps {
-  key:string;
+  optionKey:string;
   value:number;
   index:number;
   currentQuestionIndex:number;
