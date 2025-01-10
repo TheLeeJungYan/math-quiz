@@ -1,0 +1,124 @@
+{
+  "quiz": [
+    {
+      "id": 1,
+      "question": 17,
+      "options": {
+        "a": 10,
+        "b": 20,
+        "c": 17
+      },
+      "answer": 20
+    },
+    {
+      "id": 2,
+      "question": 75,
+      "options": {
+        "a": 70,
+        "b": 80,
+        "c": 175
+      },
+      "answer": 80
+    },
+    {
+      "id": 3,
+      "question": 64,
+      "options": {
+        "a": 64,
+        "b": 70,
+        "c": 60
+      },
+      "answer": 80
+    },
+    {
+      "id": 4,
+      "question": 98,
+      "options": {
+        "a": 80,
+        "b": 100,
+        "c": 89
+      },
+      "answer": 100
+    },
+    {
+      "id": 5,
+      "question": 94,
+      "options": {
+        "a": 100,
+        "b": 94,
+        "c": 90
+      },
+      "answer": 90
+    },
+    {
+      "id": 6,
+      "question": 445,
+      "options": {
+        "a": 450,
+        "b": 440,
+        "c": 500
+      },
+      "answer": 450
+    },
+    {
+      "id": 7,
+      "question": 45,
+      "options": {
+        "a": 50,
+        "b": 45,
+        "c": 40
+      },
+      "answer": 50
+    },
+    {
+      "id": 8,
+      "question": 19,
+      "options": {
+        "a": 20,
+        "b": 10,
+        "c": 19
+      },
+      "answer": 20
+    },
+    {
+      "id": 9,
+      "question": 0,
+      "options": {
+        "a": 10,
+        "b": 1,
+        "c": 0
+      },
+      "answer": 0
+    },
+    {
+      "id": 10,
+      "question": 199,
+      "options": {
+        "a": 190,
+        "b": 100,
+        "c": 200
+      },
+      "answer": 200
+    },
+    {
+      "id": 11,
+      "question": 165,
+      "options": {
+        "a": 160,
+        "b": 170,
+        "c": 150
+      },
+      "answer": 170
+    },
+    {
+      "id": 12,
+      "question": 999,
+      "options": {
+        "a": 990,
+        "b": 1000,
+        "c": 909
+      },
+      "answer": 1000
+    }
+  ]
+}

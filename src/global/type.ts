@@ -1,5 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 export interface ChildrenProps {
-    children: ReactNode;
+  children: ReactNode;
+}
+
+export interface ProgressBarProps {
+  percentage: number;
 }
