@@ -1,7 +1,7 @@
 import { ProgressBarProps } from "@/global/type";
-import { useState } from "react";
+
 const ProgressBar: React.FC<ProgressBarProps> = ({ currentIndex,maxNumber }) => {
-  const [percentage,setPercentage] =useState<number>(((currentIndex+1)/maxNumber)*100);
+  const percentage:number = ((currentIndex + 1) / maxNumber) * 100;
   return (
     <>
       <div className="min-w-4xl rounded-full bg-zinc-100 border border-zinc-50 h-3  overflow-hidden relative">

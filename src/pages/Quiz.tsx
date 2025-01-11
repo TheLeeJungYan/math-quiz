@@ -1,19 +1,41 @@
 import { quiz } from "@/json/quiz.json";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Footer from "@/components/Footer";
 import ProgressBar from "@/components/ProgressBar";
 import Robot from "@/components/Robot";
 import Option from "@/components/Option";
 import { Button } from "@/components/ui/button";
+import DialogBox from "@/components/DialogBox";
 import { Door01Icon } from "hugeicons-react";
-import { QuestionProps } from "@/global/type";
-import "@/css/quiz.css";
+import { QuestionProps, robotProps } from "@/global/type";
+
+
 const Quiz = () => {
   const [questions, setQuestions] = useState<QuestionProps[]>(quiz);
   const [currentQuestionIndex,setCurrentQuestionIndex] = useState<number>(0);
   const [score,setScore] = useState(0);
-
+  const [robotStatus,setRobotStatus] = useState<"normal" | "correct" | "wrong">("normal");
   const [currentQuestion,setCurrentQuestion] = useState<QuestionProps>(quiz[currentQuestionIndex]);
+  const [selectedOption,setSelectedOption] = useState<number|null>(null);
+  const optionOnSelected:(value:string)=>void = (value) =>{
+    const answer:number = parseInt(value);
+    setSelectedOption(answer);
+    if(answer == currentQuestion.answer){
+      setScore((prev)=>prev+1);
+      setRobotStatus("correct");
+    }else{
+      setRobotStatus("wrong");
+    }
+    setTimeout(()=>{
+      setRobotStatus("normal");
+      setCurrentQuestionIndex((prev)=>prev+1);
+    },1000);
+  } 
+
+  useEffect(()=>{
+    setCurrentQuestion(quiz[currentQuestionIndex]);
+    setSelectedOption(null);
+  },[currentQuestionIndex])
   return (
     <div className="flex flex-1 flex-col">
       <Button className="flex bg-red-600 w-fit absolute flex top-2 right-2 hover:bg-red-500 focus:ring focus:ring-red-300"><Door01Icon size={24}/>Exit Quiz</Button>
@@ -24,15 +46,15 @@ const Quiz = () => {
             id="question"
             className="flex w-full mt-10 min-h-28 items-center gap-10"
           >
-            <Robot error={false}/>
-            <div className="flex-1 px-4 py-5 relative flex  bg-neutral-200 rounded-md text-gray-700" id="dialogBox">
-              {currentQuestion.question ? <code>{currentQuestion.question} rounded off to the nearest <b>10</b> is .. ?</code>:''}
-            </div>
+            <Robot robotStatus={robotStatus} />
+            <DialogBox question={`${currentQuestion.question} rounded off to the nearest 10 is ..?`}/>
+        
+           
           </div>
           <div id="optionsGrp" className="mt-10 flex flex-col w-full gap-5">
               {
                 currentQuestion.options && Object.entries(currentQuestion.options).map(([key, value], index) => {
-                  return <Option key={index} index={index} optionKey={key} value={value} currentQuestionIndex={currentQuestionIndex}/>
+                  return <Option key={index} index={index} optionKey={key} value={value} currentQuestionIndex={currentQuestionIndex} optionOnSelected={optionOnSelected} selectedOption={selectedOption} correctOptions={currentQuestion.answer}/>
                 })
               }
           </div>

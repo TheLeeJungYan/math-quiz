@@ -9,6 +9,9 @@ export default {
         montserratBold: ["Montserrat-Bold"],
         circular: ["Circular-Medium"],
       },
+      scale:{
+        '102':'1.02'
+      },
       spacing: {
         "4xl": "56rem",
       },

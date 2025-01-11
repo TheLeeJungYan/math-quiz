@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { TiTick } from "react-icons/ti";
-import { TiWarning } from "react-icons/ti";
+import { robotProps } from "@/global/type";
 const BreathAndJump = keyframes`
     0%{
         height:95px;
@@ -57,21 +56,24 @@ const BreathAndJump = keyframes`
   const Container = styled.div`
     position: relative;
   `;
-  const Head = styled.div`
-    height: 95px;
-    width: 110px;
-    border-radius: 50%;
-    box-shadow: 0 0 5px #fff;
-    animation: ${BreathAndJump} 3s linear infinite;
-    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
-    background-blend-mode: multiply, multiply;
-    display: flex;
-    flex-direction: column;
-    z-index: 1000;
-    position: relative;
-    overflow: hidden;
-    padding: 10px;
-  `;
+  const Head = styled.div<{ robotStatus: "normal" | "correct" | "wrong" }>`
+  height: 95px;
+  width: 110px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #fff;
+  animation: ${BreathAndJump} 3s linear infinite;
+  background-image: ${({ robotStatus }) =>
+    robotStatus === "normal" || robotStatus === "correct"
+      ? 'linear-gradient(to top, #0ba360 0%, #3cba92 100%)'
+      : 'linear-gradient(to top, #ff0844 0%, #ffb199 100%)'};
+  background-blend-mode: multiply, multiply;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+`;
   const Len = styled.div`
     flex: 1 1 0;
     display: flex;
@@ -90,29 +92,29 @@ const BreathAndJump = keyframes`
 
     animation: ${Blink} 5s linear infinite;
   `;
-  // const Msg = styled.div`
-  // border-radius:50%;
-  // width:25px;
-  // height:25px;
-  // background-image: ${error?'linear-gradient(to top, #ff0844 0%, #ffb199 100%)':'linear-gradient(to top, #0ba360 0%, #3cba92 100%)'};
-  // display:flex;
-  // justify-content:center;
-  // align-items:center;
-  // color:#fff;
-  // position:absolute;
-  // top:-30px;
-  // left:-5px;
-  // `
+  const Msg = styled.div<{ robotStatus: "normal" | "correct" | "wrong" }>`
+  border-radius:10px;
+  width:85px;
+  padding-bottom:2px;
+  background-image: ${({ robotStatus })=> robotStatus === "normal" || robotStatus=="correct" ? 'linear-gradient(to top, #0ba360 0%, #3cba92 100%)' : 'linear-gradient(to top, #ff0844 0%, #ffb199 100%)'};
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  position:absolute;
+  transform:${({ robotStatus })=> robotStatus==="normal" ?  'translate(10px,50px)' : 'translate(-25px,-30px)' }
+  `
   const RobotCont = styled.div`
   height:100px;
   `
-const Robot:React.FC<string> = ({error}) => {
-  
+const Robot:React.FC<robotProps> = ({robotStatus}) => {
+  console.log(robotStatus);
   return (
     <Container>
-      {/* <Msg>{error?<TiWarning size={16}/>:<TiTick size={16}/>}</Msg> */}
+      
+      <Msg robotStatus={robotStatus} className="font-circular transition-all duration-200 text-sm">{robotStatus  === "correct" ?'correct':'wrong'}</Msg>
       <RobotCont>
-      <Head className="w-48 h-48 rounded-full">
+      <Head className="w-48 h-48 rounded-full" robotStatus={robotStatus}>
         <Len>
           <Eyes></Eyes>
           <Eyes></Eyes>

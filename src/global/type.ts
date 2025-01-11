@@ -1,3 +1,4 @@
+import DialogBox from "@/components/DialogBox";
 import { ReactNode } from "react";
 
 export interface ChildrenProps {
@@ -27,4 +28,15 @@ export interface OptionComponentProps {
   value:number;
   index:number;
   currentQuestionIndex:number;
+  selectedOption:number|null;
+  correctOptions:number;
+  optionOnSelected:(value:string)=>void,
+}
+
+export interface DialogBoxProp{
+  question:string
+}
+
+export interface robotProps {
+  robotStatus: "normal" | "correct" | "wrong"
 }
