@@ -1,4 +1,4 @@
-(assets/images/logo.png)
+![Math Quiz Logo](assets/images/logo.png)
 
 # Math Quiz App
 
