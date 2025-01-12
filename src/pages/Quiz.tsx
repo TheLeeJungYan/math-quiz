@@ -7,7 +7,7 @@ import Option from "@/components/Option";
 import { Button } from "@/components/ui/button";
 import DialogBox from "@/components/DialogBox";
 import { Door01Icon } from "hugeicons-react";
-import { QuestionProps, robotProps } from "@/global/type";
+import { QuestionProps } from "@/global/type";
 
 
 const Quiz = () => {
