@@ -14,6 +14,7 @@ export default {
       },
       spacing: {
         "4xl": "56rem",
+        "2xl": "42rem;"
       },
       borderRadius: {
         lg: "var(--radius)",

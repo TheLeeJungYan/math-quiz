@@ -2,7 +2,7 @@
   "quiz": [
     {
       "id": 1,
-      "question": 17,
+      "question": "17 rounded off to the nearest 10 is ..?",
       "options": {
         "a": 10,
         "b": 20,
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "question": 75,
+      "question": "75 rounded off to the nearest 10 is ..?",
       "options": {
         "a": 70,
         "b": 80,
@@ -22,17 +22,17 @@
     },
     {
       "id": 3,
-      "question": 64,
+      "question": "64 rounded off to the nearest 10 is ..?",
       "options": {
         "a": 64,
         "b": 70,
         "c": 60
       },
-      "answer": 80
+      "answer": 60
     },
     {
       "id": 4,
-      "question": 98,
+      "question": "98 rounded off to the nearest 10 is ..?",
       "options": {
         "a": 80,
         "b": 100,
@@ -42,7 +42,7 @@
     },
     {
       "id": 5,
-      "question": 94,
+      "question": "94 rounded off to the nearest 10 is ..?",
       "options": {
         "a": 100,
         "b": 94,
@@ -52,7 +52,7 @@
     },
     {
       "id": 6,
-      "question": 445,
+      "question": "445 rounded off to the nearest 10 is ..?",
       "options": {
         "a": 450,
         "b": 440,
@@ -62,7 +62,7 @@
     },
     {
       "id": 7,
-      "question": 45,
+      "question": "45 rounded off to the nearest 10 is ..?",
       "options": {
         "a": 50,
         "b": 45,
@@ -72,7 +72,7 @@
     },
     {
       "id": 8,
-      "question": 19,
+      "question": "19 rounded off to the nearest 10 is ..?",
       "options": {
         "a": 20,
         "b": 10,
@@ -82,7 +82,7 @@
     },
     {
       "id": 9,
-      "question": 0,
+      "question": "0 rounded off to the nearest 10 is ..?",
       "options": {
         "a": 10,
         "b": 1,
@@ -92,7 +92,7 @@
     },
     {
       "id": 10,
-      "question": 199,
+      "question": "199 rounded off to the nearest 10 is ..?",
       "options": {
         "a": 190,
         "b": 100,
@@ -102,7 +102,7 @@
     },
     {
       "id": 11,
-      "question": 165,
+      "question": "165 rounded off to the nearest 10 is ..?",
       "options": {
         "a": 160,
         "b": 170,
@@ -112,7 +112,7 @@
     },
     {
       "id": 12,
-      "question": 999,
+      "question": "999 rounded off to the nearest 10 is ..?",
       "options": {
         "a": 990,
         "b": 1000,

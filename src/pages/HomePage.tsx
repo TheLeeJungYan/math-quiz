@@ -8,11 +8,11 @@ const HomePage = () => {
     <>
       <Header />
       <div className="flex-1 flex justify-center py-32">
-        <div className="flex flex-col gap-6 max-w-4xl  text-center">
-          <div className="text-3xl sm:text-6xl font-circular text-gray-800">
+        <div className="flex flex-col gap-6 max-w-4xl  text-center px-5 sm:px-0">
+          <div className="text-4xl sm:text-6xl font-circular text-gray-800">
             MATH MASTERY CHALLENGE
           </div>
-          <div className="font-montserratRegular">
+          <div className="font-montserratRegular text-xs sm:text-base">
             Test your math skills with 12 multiple-choice questions focused on
             rounding numbers to the nearest 10. See how quickly you can solve
             each problem and master the concept of rounding!

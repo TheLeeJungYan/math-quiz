@@ -1,7 +1,7 @@
 import { CopyrightIcon } from "hugeicons-react";
 const Footer = () => {
   return (
-    <div className="mt-auto flex justify-end items-center font-montserratRegular gap-2 mb-2 text-gray-600 px-4 text-sm">
+    <div className="mt-auto flex justify-end items-center font-montserratRegular gap-2 mb-2 text-gray-600 px-4 sm:text-sm text-xs">
       <CopyrightIcon size={14} />
       <span>copyright:</span>
       <a

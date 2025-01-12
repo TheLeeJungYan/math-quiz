@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { robotProps } from "@/global/type";
+import { RobotProps } from "@/global/type";
 const BreathAndJump = keyframes`
     0%{
         height:95px;
@@ -66,7 +66,7 @@ const BreathAndJump = keyframes`
   background-image: ${props => props.$robotStatus =="normal" || props.$robotStatus =="correct"  ? "linear-gradient(to top, #0ba360 0%, #3cba92 100%)" : "linear-gradient(to top, #ff0844 0%, #ffb199 100%)"};
   display: flex;
   flex-direction: column;
-  z-index: 1000;
+  z-index: 10;
   position: relative;
   overflow: hidden;
   padding: 10px;
@@ -104,11 +104,10 @@ const BreathAndJump = keyframes`
   const RobotCont = styled.div`
   height:100px;
   `
-const Robot:React.FC<robotProps> = ({robotStatus}) => {
-  console.log(robotStatus);
+const Robot:React.FC<RobotProps> = ({robotStatus}) => {
 
   return (
-    <Container>
+    <Container className="sm:block hidden">
       
       <Msg $robotStatus={robotStatus} className="font-circular transition-all duration-200 text-sm">{robotStatus  === "correct" ?'correct':'wrong'}</Msg>
       <RobotCont>

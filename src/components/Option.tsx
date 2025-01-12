@@ -1,20 +1,11 @@
 import { OptionComponentProps } from "@/global/type";
-import { useEffect,useState } from "react";
 import { FaCheck } from "react-icons/fa6";
 import { FaXmark } from "react-icons/fa6";
+import useIdentifyChange from "@/hook/useIdentifyChange";
 const Option:React.FC<OptionComponentProps> = ({index,optionKey,value,currentQuestionIndex,selectedOption,correctOptions,optionOnSelected}) =>{
-    const [change,setChange] = useState<boolean>(false);
-       useEffect(()=>{ 
-            console.log({
-                selectedOption,correctOptions,value
-            });
-           setChange(true);
-           setTimeout(()=>{
-               setChange(false);
-           },400)
-       },[value]);
+    const change = useIdentifyChange(value);
     return (
-        <label key={index} className={`${change ? 'opacity-0' : 'opacity-1' } flex border rounded-md px-3 shadow-sm py-5 cursor-pointer items-center transition-all duration-300    ${
+        <label key={index} className={`${change ? 'opacity-0' : 'opacity-1' } flex border rounded-md px-3 shadow-sm py-5 cursor-pointer items-center transition-colors transition-transform duration-200    ${
                 selectedOption==null? 'hover:scale-102 hover:border-gray-300 hover:bg-gray-200 bg-gray-100': selectedOption == value ? selectedOption == correctOptions ? 'bg-emerald-200 border-emerald-300 ring ring-emerald-200' : 'bg-red-200 border-red-300 ring ring-red-200'  : value == correctOptions ? 'bg-emerald-200 border-emerald-300 ring ring-emerald-200 ' : 'bg-gray-100'
                 }`}>
             <input type="radio" name={`q-${currentQuestionIndex}`} value={value} className="w-0 h-0 opacity-0" onChange={(event)=>{
