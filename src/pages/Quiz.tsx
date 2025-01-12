@@ -18,10 +18,9 @@ const Quiz = () => {
   const [robotStatus,setRobotStatus] = useState<"normal" | "correct" | "wrong">("normal");
   const [currentQuestion,setCurrentQuestion] = useState<QuestionProps>(quiz[currentQuestionIndex]);
   const [selectedOption,setSelectedOption] = useState<number|null>(null);
-  const optionOnSelected:(value:string)=>void = (value) =>{
-    const answer:number = parseInt(value);
-    setSelectedOption(answer);
-    if(answer == currentQuestion.answer){
+  const optionOnSelected:(value:number)=>void = (value) =>{
+    setSelectedOption(value);
+    if(value == currentQuestion.answer){
       setScore((prev)=>prev+1);
       setRobotStatus("correct");
     }else{

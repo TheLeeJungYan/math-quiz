@@ -29,7 +29,7 @@ export interface OptionComponentProps {
   currentQuestionIndex:number;
   selectedOption:number|null;
   correctOptions:number;
-  optionOnSelected:(value:string)=>void,
+  optionOnSelected:(value:number)=>void,
 }
 
 export interface DialogBoxProp{

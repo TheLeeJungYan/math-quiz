@@ -56,17 +56,14 @@ const BreathAndJump = keyframes`
   const Container = styled.div`
     position: relative;
   `;
-  const Head = styled.div<{ robotStatus: "normal" | "correct" | "wrong" }>`
+  const Head = styled.div<{$robotStatus?: "normal"|"correct"|"wrong"}>`
   height: 95px;
   width: 110px;
   border-radius: 50%;
   box-shadow: 0 0 5px #fff;
   animation: ${BreathAndJump} 3s linear infinite;
-  background-image: ${({ robotStatus }) =>
-    robotStatus === "normal" || robotStatus === "correct"
-      ? 'linear-gradient(to top, #0ba360 0%, #3cba92 100%)'
-      : 'linear-gradient(to top, #ff0844 0%, #ffb199 100%)'};
   background-blend-mode: multiply, multiply;
+  background-image: ${props => props.$robotStatus =="normal" || props.$robotStatus =="correct"  ? "linear-gradient(to top, #0ba360 0%, #3cba92 100%)" : "linear-gradient(to top, #ff0844 0%, #ffb199 100%)"};
   display: flex;
   flex-direction: column;
   z-index: 1000;
@@ -92,29 +89,30 @@ const BreathAndJump = keyframes`
 
     animation: ${Blink} 5s linear infinite;
   `;
-  const Msg = styled.div<{ robotStatus: "normal" | "correct" | "wrong" }>`
+  const Msg = styled.div<{ $robotStatus: "normal" | "correct" | "wrong" }>`
   border-radius:10px;
   width:85px;
   padding-bottom:2px;
-  background-image: ${({ robotStatus })=> robotStatus === "normal" || robotStatus=="correct" ? 'linear-gradient(to top, #0ba360 0%, #3cba92 100%)' : 'linear-gradient(to top, #ff0844 0%, #ffb199 100%)'};
+  background-image: ${props=> props.$robotStatus === "normal" || props.$robotStatus=="correct" ? 'linear-gradient(to top, #0ba360 0%, #3cba92 100%)' : 'linear-gradient(to top, #ff0844 0%, #ffb199 100%)'};
   display:flex;
   justify-content:center;
   align-items:center;
   color:#fff;
   position:absolute;
-  transform:${({ robotStatus })=> robotStatus==="normal" ?  'translate(10px,50px)' : 'translate(-25px,-30px)' }
+  transform:${props=> props.$robotStatus==="normal" ?  'translate(10px,50px)' : 'translate(-25px,-30px)' }
   `
   const RobotCont = styled.div`
   height:100px;
   `
 const Robot:React.FC<robotProps> = ({robotStatus}) => {
   console.log(robotStatus);
+
   return (
     <Container>
       
-      <Msg robotStatus={robotStatus} className="font-circular transition-all duration-200 text-sm">{robotStatus  === "correct" ?'correct':'wrong'}</Msg>
+      <Msg $robotStatus={robotStatus} className="font-circular transition-all duration-200 text-sm">{robotStatus  === "correct" ?'correct':'wrong'}</Msg>
       <RobotCont>
-      <Head className="w-48 h-48 rounded-full" robotStatus={robotStatus}>
+      <Head className="w-48 h-48 rounded-full" $robotStatus={robotStatus}>
         <Len>
           <Eyes></Eyes>
           <Eyes></Eyes>
