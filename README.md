@@ -1,11 +1,8 @@
+(assets/images/logo.png)
+
 # Math Quiz App
 
-Welcome to the Math Quiz App! This is an interactive quiz application where users can test their math skills. The app allows users to answer multiple-choice questions and view their scores at the end of the quiz.
-
-## Live Demo
-
-You can check out the live version of the app here:  
-[Math Quiz App - Live Demo](https://math-quiz-4o63.vercel.app/)
+Welcome to the Math Quiz App! This is an interactive quiz application where users can test their math skills. The app allows users to answer multiple-choice questions and view their scores at the end of the quiz. You can check out the live version of the app here: [Math Quiz App - Live Demo](https://math-quiz-4o63.vercel.app/)
 
 ## How to Modify the Questions
 
@@ -20,4 +17,5 @@ The question data structure and types are defined in `src/global/dataType`. You 
 
 - React
 - JavaScript
+- TypeScript
 - Vercel (for deployment)
