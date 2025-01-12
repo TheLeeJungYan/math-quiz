@@ -1,4 +1,3 @@
-import DialogBox from "@/components/DialogBox";
 import { ReactNode } from "react";
 
 export interface ChildrenProps {

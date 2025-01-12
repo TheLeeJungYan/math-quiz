@@ -11,9 +11,10 @@ import { QuestionProps } from "@/global/type";
 
 
 const Quiz = () => {
-  const [questions, setQuestions] = useState<QuestionProps[]>(quiz);
+  const questions:QuestionProps[] = quiz;
   const [currentQuestionIndex,setCurrentQuestionIndex] = useState<number>(0);
   const [score,setScore] = useState(0);
+  console.log(score);
   const [robotStatus,setRobotStatus] = useState<"normal" | "correct" | "wrong">("normal");
   const [currentQuestion,setCurrentQuestion] = useState<QuestionProps>(quiz[currentQuestionIndex]);
   const [selectedOption,setSelectedOption] = useState<number|null>(null);
